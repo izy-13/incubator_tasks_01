@@ -2,9 +2,6 @@ import { ErrorInfo, ErrorMessages, NewVideoBody, VideoResolutions } from '@apiTy
 import { getErrorMessages, isValidEnumValue, isValidString } from '@utils/index';
 import { AUTHOR_MAX_LENGTH, TITLE_MAX_LENGTH } from '../constants';
 
-// const TITLE_MAX_LENGTH = 40;
-// const AUTHOR_MAX_LENGTH = 20;
-
 export const isNewVideoValid = (video: NewVideoBody): { isValid: boolean; errorData: ErrorMessages } => {
   if (!video) {
     return {
