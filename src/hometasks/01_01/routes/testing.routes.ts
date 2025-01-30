@@ -1,11 +1,13 @@
-import { Router } from 'express';
+import { Request, Response, Router } from 'express';
+import { mockVideosData } from '../database/mockVideosData';
 
 export const testingRouter = Router();
 
-testingRouter.delete('/all-data', async (req, res) => {
+testingRouter.delete('/all-data', async (req: Request, res: Response) => {
   try {
-    res.status(200).send('All data has been deleted');
+    mockVideosData.length = 0;
+    res.status(204).send('All data has been deleted');
   } catch (e) {
-    res.status(500).send(e);
+    res.status(500).send({ error: 'An error occurred while fetching videos', e });
   }
 });

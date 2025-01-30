@@ -12,7 +12,11 @@ export default [
   eslintPluginPrettier,
   ...tseslint.configs.recommended,
   {
-    rules: { ...eslintConfigPrettier.rules, ...eslintPluginPrettier.rules },
+    rules: {
+      ...eslintConfigPrettier.rules,
+      ...eslintPluginPrettier.rules,
+      'no-unused-expressions': 1,
+    },
   },
   { ignores: ['dist', 'node_modules', 'coverage'] },
 ];
