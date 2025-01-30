@@ -1,4 +1,4 @@
-import { pathConstants } from '@constants/index';
+import { pathConstants } from '@apiConstants/index';
 import { testingRouter } from './routes/testing.routes';
 import { videosRouter } from './routes/videos.routes';
 

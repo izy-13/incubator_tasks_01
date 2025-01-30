@@ -33,7 +33,7 @@
     // "moduleResolution": "node10",                     /* Specify how TypeScript looks up a file from a given module specifier. */
      "baseUrl": "./",                                  /* Specify the base directory to resolve non-relative module names. */
      "paths": {
-       "@constants/*": ["src/constants/*"],
+       "@apiConstants/*": ["src/constants/*"],
        "@utils/*": ["src/utils/*"],
        "@hometasks/*": ["src/hometasks/*"],
        "@apiTypes/*": ["src/types/*"],

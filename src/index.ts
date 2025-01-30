@@ -1,5 +1,5 @@
 import express from 'express';
-import { generalConstants } from '@constants/index';
+import { generalConstants } from '@apiConstants/index';
 import { setupServer } from '@utils/index';
 import { routesHometask_01_01 } from '@hometasks/index';
 
