@@ -1,3 +1,3 @@
 export const generalConstants = {
-  PORT: 4004,
+  PORT: 5000,
 };
