@@ -22,5 +22,5 @@ export const isNewVideoValid = (video: NewVideoBody): { isValid: boolean; errorD
     }
   });
 
-  return { isValid: data.some(({ isValid }) => !isValid), errorData: getErrorMessages(data) };
+  return { isValid: data.every(({ isValid }) => isValid), errorData: getErrorMessages(data) };
 };

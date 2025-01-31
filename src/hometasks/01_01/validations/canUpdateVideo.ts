@@ -35,5 +35,5 @@ export const canUpdateVideo = (video: Video): { isValid: boolean; errorData: Err
     }
   });
 
-  return { isValid: data.some(({ isValid }) => !isValid), errorData: getErrorMessages(data) };
+  return { isValid: data.every(({ isValid }) => isValid), errorData: getErrorMessages(data) };
 };

@@ -7,7 +7,11 @@ import { ErrorInfo } from '@apiTypes/index';
  * @param {number} maxLength - max length of value.
  * @returns {ErrorInfo} All info about field.
  */
-export function isValidString(value: unknown, field: string, maxLength?: number): ErrorInfo {
-  const isValid = typeof value === 'string' && value.trim().length > (maxLength || 0);
+export function isValidString(value: unknown, field: string, maxLength: number = 1000): ErrorInfo {
+  if (!value) {
+    return { field, message: 'Invalid string', isValid: false };
+  }
+
+  const isValid = typeof value === 'string' && value.trim().length <= maxLength;
   return { field, message: isValid ? '' : 'Invalid string', isValid };
 }
