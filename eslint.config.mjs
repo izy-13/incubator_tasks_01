@@ -18,5 +18,5 @@ export default [
       'no-unused-expressions': 1,
     },
   },
-  { ignores: ['dist', 'node_modules', 'coverage'] },
+  { ignores: ['dist', 'node_modules', 'coverage', 'jest.config.js', 'e2e.config.js'] },
 ];

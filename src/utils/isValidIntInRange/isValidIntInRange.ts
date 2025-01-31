@@ -1,4 +1,5 @@
 import { ErrorInfo } from '@apiTypes/index';
+import { errorsConstants } from '@apiConstants/index';
 
 /**
  * Checks if a value is a valid integer within the range [1, 18] or null.
@@ -17,5 +18,5 @@ export const isValidIntInRange = (
 ): ErrorInfo => {
   const isValid = typeof value === 'number' && value >= minValue && value <= maxValue;
 
-  return { field, message: isValid ? '' : 'Invalid integer value', isValid };
+  return { field, message: isValid ? '' : errorsConstants.invalidInteger, isValid };
 };

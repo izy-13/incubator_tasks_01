@@ -8,8 +8,10 @@
     "dev": "nodemon --inspect src/index.ts",
     "start": "ts-node -r tsconfig-paths/register src/index.ts",
     "prettier-write": "prettier . --write",
-    "prettier-check": "npx prettier . --check",
-    "lint": "npx eslint ."
+    "prettier-check": "prettier . --check",
+    "lint": "yarn eslint .",
+    "test:e2e": "jest -i --config ./e2e.config.js",
+    "test:unit": "jest -i --config ./jest.config.js"
   },
   "dependencies": {
     "express": "^4.21.2"
@@ -18,13 +20,18 @@
     "@eslint/eslintrc": "^3.2.0",
     "@eslint/js": "^9.19.0",
     "@types/express": "^5.0.0",
+    "@types/jest": "^29.5.14",
     "@types/node": "^22.12.0",
+    "@types/supertest": "^6.0.2",
     "eslint": "^9.19.0",
     "eslint-config-prettier": "^10.0.1",
     "eslint-plugin-prettier": "^5.2.3",
     "globals": "^15.14.0",
+    "jest": "^29.7.0",
     "nodemon": "^3.1.9",
     "prettier": "^3.4.2",
+    "supertest": "^7.0.0",
+    "ts-jest": "^29.2.5",
     "ts-node": "^10.9.2",
     "tsconfig-paths": "^4.2.0",
     "typescript": "^5.7.3",

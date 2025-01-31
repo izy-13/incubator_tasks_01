@@ -1,4 +1,5 @@
 import { ErrorInfo } from '@apiTypes/index';
+import { errorsConstants } from '@apiConstants/index';
 
 /**
  * Checks if the input is a valid non-empty string.
@@ -8,10 +9,10 @@ import { ErrorInfo } from '@apiTypes/index';
  * @returns {ErrorInfo} All info about field.
  */
 export function isValidString(value: unknown, field: string, maxLength: number = 1000): ErrorInfo {
-  if (!value) {
-    return { field, message: 'Invalid string', isValid: false };
+  if (!value || (typeof value === 'string' && value.trim().length === 0)) {
+    return { field, message: errorsConstants.invalidString, isValid: false };
   }
 
   const isValid = typeof value === 'string' && value.trim().length <= maxLength;
-  return { field, message: isValid ? '' : 'Invalid string', isValid };
+  return { field, message: isValid ? '' : errorsConstants.invalidString, isValid };
 }

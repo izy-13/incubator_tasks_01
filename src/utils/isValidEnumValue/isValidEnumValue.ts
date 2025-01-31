@@ -1,4 +1,5 @@
 import { ErrorInfo } from '@apiTypes/index';
+import { errorsConstants } from '@apiConstants/index';
 
 /**
  * Checks if the given value exists in the provided enum values array.
@@ -9,6 +10,7 @@ import { ErrorInfo } from '@apiTypes/index';
  * @returns {ErrorInfo} All info about field.
  */
 export function isValidEnumValue<T>(enumValues: T[], value: T[] | unknown, field: string): ErrorInfo {
-  const isValid = Array.isArray(value) && value.every((v) => enumValues.includes(v));
-  return { field, message: isValid ? '' : 'Invalid enum value', isValid };
+  const isValid = Array.isArray(value) && value.length > 0 && value.every((v) => enumValues.includes(v));
+
+  return { field, message: isValid ? '' : errorsConstants.invalidEnumValue, isValid };
 }

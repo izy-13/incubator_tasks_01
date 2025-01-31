@@ -1,4 +1,5 @@
 import { ErrorInfo } from '@apiTypes/index';
+import { errorsConstants } from '@apiConstants/index';
 
 /**
  * Checks if a value is a valid ISO 8601 date string.
@@ -7,7 +8,7 @@ import { ErrorInfo } from '@apiTypes/index';
  * @returns {ErrorInfo} All info about field.
  */
 
-const errorsData = { message: 'Invalid date format', isValid: false };
+const errorsData = { message: errorsConstants.invalidDate, isValid: false };
 
 export function isValidISODate(value: unknown, field: string): ErrorInfo {
   if (typeof value !== 'string') {
@@ -23,7 +24,7 @@ export function isValidISODate(value: unknown, field: string): ErrorInfo {
 
   // Ensure it’s a valid date
   const date = new Date(value);
-  if (isNaN(date.getTime())) {
+  if (isNaN(date.getTime()) || value !== date.toISOString()) {
     return { field, ...errorsData };
   }
 
