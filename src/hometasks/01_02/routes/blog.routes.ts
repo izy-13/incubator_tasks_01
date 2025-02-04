@@ -7,11 +7,12 @@ import {
   updateBlogController,
 } from '../controllers';
 import { blogValidators } from '../validations/blog.validations';
+import { basicAuthMiddleware } from '@middlewares/index';
 
 export const blogRouter = Router();
 
 blogRouter.post('/', ...blogValidators, createBlogController);
 blogRouter.put('/:id', ...blogValidators, updateBlogController);
-blogRouter.delete('/:id', ...blogValidators, deleteBlogController);
+blogRouter.delete('/:id', basicAuthMiddleware, deleteBlogController);
 blogRouter.get('/', getBlogController);
 blogRouter.get('/:id', getBlogByIdController);

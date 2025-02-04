@@ -34,4 +34,8 @@ export const blogRepository = {
       return false;
     }
   },
+
+  clearBlogs: () => {
+    blogs.length = 0;
+  },
 };

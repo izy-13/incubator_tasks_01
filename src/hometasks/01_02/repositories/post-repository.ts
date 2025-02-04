@@ -1,4 +1,5 @@
 import { Post } from '@apiTypes/index';
+import { blogRepository } from './blog-repository';
 
 const posts: Post[] = [
   {
@@ -11,13 +12,21 @@ const posts: Post[] = [
   },
 ];
 
+const { findBlogById } = blogRepository;
+
 export const postRepository = {
   findPosts: () => posts,
 
   findPostById: (id: string) => posts.find((post) => post.id === id),
 
   createPost: (post: Omit<Post, 'id'>): Post => {
-    const newPost: Post = { id: Math.floor(Math.random() * 100000).toString(), ...post };
+    const blog = findBlogById(post.blogId);
+
+    const newPost: Post = {
+      id: Math.floor(Math.random() * 100000).toString(),
+      ...post,
+      blogName: blog?.name || '',
+    };
     posts.push(newPost);
     return newPost;
   },
@@ -42,5 +51,9 @@ export const postRepository = {
     } else {
       return false;
     }
+  },
+
+  clearPosts: () => {
+    posts.length = 0;
   },
 };
