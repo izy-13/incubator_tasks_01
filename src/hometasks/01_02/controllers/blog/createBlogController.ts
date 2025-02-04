@@ -5,7 +5,6 @@ import { errorsConstants } from '@apiConstants/errors.constants';
 const { createBlog } = blogRepository;
 const { processingError } = errorsConstants;
 
-// 401 if user is not authorized
 export const createBlogController = (req: Request, res: Response) => {
   try {
     const newBlog = createBlog(req.body);

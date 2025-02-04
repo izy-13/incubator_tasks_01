@@ -22,11 +22,10 @@ export function isValidISODate(value: unknown, field: string): ErrorInfo {
     return { field, ...errorsData };
   }
 
-  // Ensure it’s a valid date
   const date = new Date(value);
   if (isNaN(date.getTime()) || value !== date.toISOString()) {
     return { field, ...errorsData };
   }
 
-  return { isValid: true, field, message: '' }; // Valid date check
+  return { isValid: true, field, message: '' };
 }

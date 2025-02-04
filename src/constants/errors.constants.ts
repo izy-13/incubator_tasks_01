@@ -8,4 +8,5 @@ export const errorsConstants = {
   itemNotFound: 'Item not found',
   invalidUrl: 'Invalid URL',
   unauthorized: 'Unauthorized',
+  invalidId: 'Invalid ID',
 };

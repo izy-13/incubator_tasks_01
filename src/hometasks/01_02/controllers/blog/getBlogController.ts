@@ -8,7 +8,7 @@ const { findBlogs } = blogRepository;
 export const getBlogController = (req: Request, res: Response) => {
   try {
     const foundBlogs = findBlogs();
-    res.status(200).json(foundBlogs);
+    res.status(200).send(foundBlogs);
   } catch (e) {
     res.status(500).send({ error: processingError, e });
   }

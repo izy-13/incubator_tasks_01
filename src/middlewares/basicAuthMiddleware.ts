@@ -6,7 +6,6 @@ const { PASSWORD, USER } = generalConstants;
 const { unauthorized } = errorsConstants;
 
 export const basicAuthMiddleware = (req: Request, res: Response, next: NextFunction) => {
-  console.log(req);
   const authHeader = req.headers.authorization;
 
   if (!authHeader || !authHeader.startsWith('Basic ')) {

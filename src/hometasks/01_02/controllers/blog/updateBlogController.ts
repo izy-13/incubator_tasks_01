@@ -6,14 +6,12 @@ const { processingError, itemNotFound } = errorsConstants;
 const { itemUpdated } = infoMessagesConstant;
 const { updateBlog } = blogRepository;
 
-// 401 Unauthorized
 export const updateBlogController = (req: Request, res: Response) => {
   try {
     const { id } = req.params;
     const canUpdateBlog = updateBlog(id, req.body);
 
     if (canUpdateBlog) {
-      console.log('updated', canUpdateBlog);
       res.status(204).send(itemUpdated);
       return;
     }

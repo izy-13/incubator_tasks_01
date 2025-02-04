@@ -6,7 +6,6 @@ const { deleteBlog } = blogRepository;
 const { processingError, itemNotFound } = errorsConstants;
 const { itemDeleted } = infoMessagesConstant;
 
-// can be 401 Unauthorized
 export const deleteBlogController = (req: Request, res: Response) => {
   try {
     const { id } = req.params;

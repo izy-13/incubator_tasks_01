@@ -11,7 +11,7 @@ export const getBlogByIdController = (req: Request, res: Response) => {
     const foundBlog = findBlogById(id);
 
     if (foundBlog) {
-      res.status(200).json(foundBlog);
+      res.status(200).send(foundBlog);
       return;
     }
 
