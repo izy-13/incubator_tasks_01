@@ -4,4 +4,8 @@ export const errorsConstants = {
   invalidBoolean: 'Invalid boolean',
   invalidInteger: 'Invalid integer value',
   invalidDate: 'Invalid date format',
+  processingError: 'An error occurred while processing data',
+  itemNotFound: 'Item not found',
+  invalidUrl: 'Invalid URL',
+  unauthorized: 'Unauthorized',
 };

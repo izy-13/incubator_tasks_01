@@ -5,3 +5,5 @@ export * from './getErrorMessages/getErrorMessages';
 export * from './isBoolean/isBoolean';
 export * from './isValidIntInRange/isValidIntInRange';
 export * from './isValidISODate/isValidISODate';
+export * from './decodeBase64/decodeBase64';
+export * from './encodeBase64/encodeBase64';
